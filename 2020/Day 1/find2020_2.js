@@ -7,10 +7,17 @@ const find2020 = (input) => {
     for (let i = 0; i < data.length - 1; i++) {
         let curr = dataDsc[i]
         for (let j = 0; j < data.length - 1; j++) {
-            if (curr + dataAsc[j] == 2020) {
-                return [curr, dataAsc[j], curr * dataAsc[j]]
-            } else if (curr + dataAsc[j] > 2020) {
+            if (curr + dataAsc[j] > 2020) {
                 break;
+            } else {
+                for (let k = 0; k < data.length; k++) {
+                    let double = curr + dataAsc[j];
+                    if (double + dataAsc[k] === 2020) {
+                        return [curr, dataAsc[j], dataAsc[k]]
+                    } else if (double + dataAsc[k] > 2020) {
+                        break;
+                    }
+                }
             }
         }
     }
