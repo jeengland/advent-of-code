@@ -1,3 +1,3 @@
-const textParse = require('../../utils/txtParse.js')
+const textToArray = require('../../utils/txtToArray.js')
 
-console.log(textParse('./input.txt'))
+console.log(textToArray('./input.txt'))
