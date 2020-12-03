@@ -1,6 +1,6 @@
 const txtToArray = require('../../utils/txtToArray.js');
 
-const treeCount = (input) => {
+const treeCount = (input, x, y) => {
     const map = txtToArray(input);
     map.pop();
     const rowCount = map.length - 1;
@@ -8,10 +8,10 @@ const treeCount = (input) => {
     const crd = [0, 0]; // row, column
     let treeCount = 0;
     while (crd[0] < rowCount) {
-        crd[0] += 1;
-        crd[1] += 3;
+        crd[0] += y;
+        crd[1] += x;
         if (crd[1] > colCount) {
-            crd[1] = crd[1] - colCount - 1
+            crd[1] = crd[1] - colCount - 1;
         }
         console.log(crd[0])
         if (map[crd[0]][crd[1]] === '#') {
@@ -21,4 +21,6 @@ const treeCount = (input) => {
     return treeCount;
 };
 
-console.log(treeCount('./input.txt'));
+// console.log(treeCount('./input.txt'));
+
+module.exports = treeCount;
