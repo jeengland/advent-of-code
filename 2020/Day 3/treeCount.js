@@ -21,6 +21,6 @@ const treeCount = (input, x, y) => {
     return treeCount;
 };
 
-// console.log(treeCount('./input.txt'));
+console.log(treeCount('./input.txt', 3, 1));
 
 module.exports = treeCount;
