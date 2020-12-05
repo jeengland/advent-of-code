@@ -28,16 +28,22 @@ const splitter = (lower, upper, side) => {
     }
 }
 
-const highestPass = (input) => {
+const allID = (input) => {
     const passList = txtToArray(input);
-    let record = 0;
+    const ids = []
     passList.forEach(pass => {
-        const id = passReader(pass)
-        if (id > record) {
-            record = id
-        }
+        ids.push(passReader(pass))
     })
-    return record
+    return ids.sort((a, b) => b - a)
 }
 
-// console.log(highestPass('./input.txt'))
+const allIDs = allID('./input.txt')
+
+for (let i = 0; i < allIDs.length; i++) {
+    if (allIDs[i] + 1 !== allIDs[i - 1]) {
+        console.log("minus", allIDs[i], allIDs[i - 1])
+    }
+    if (allIDs[i] - 1 !== allIDs[i + 1]) {
+        console.log("plus", allIDs[i], allIDs[i + 1])
+    }
+}
