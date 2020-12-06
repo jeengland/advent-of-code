@@ -79,7 +79,7 @@ const validate = (input) => {
             }
             const pid = obj['pid']
             if (pid.length === 9) {
-                let correct = 0
+                const correct = 0
                 for (let i = 0; i < pid.length; i++) {
                     if (validNums.includes(pid[i])) {
                         correct += 1

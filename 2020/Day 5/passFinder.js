@@ -41,9 +41,9 @@ const allIDs = allID('./input.txt')
 
 for (let i = 0; i < allIDs.length; i++) {
     if (allIDs[i] + 1 !== allIDs[i - 1]) {
-        console.log("minus", allIDs[i], allIDs[i - 1])
+        console.log(allIDs[i], allIDs[i - 1])
     }
     if (allIDs[i] - 1 !== allIDs[i + 1]) {
-        console.log("plus", allIDs[i], allIDs[i + 1])
+        console.log(allIDs[i], allIDs[i + 1])
     }
 }
