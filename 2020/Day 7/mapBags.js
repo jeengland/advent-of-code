@@ -11,7 +11,7 @@ const mapBags = (input) => {
         const contained = {}
         bags.forEach(b => {
             b = b.split(' ')
-            const num = b.shift()
+            let num = b.shift()
             b.pop()
             contained[b.join(' ')] = parseInt(num)
         })
